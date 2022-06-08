@@ -67,14 +67,14 @@ ALTER TABLE answer_photos ADD FOREIGN KEY (answer_id) REFERENCES answers (answer
 -- -- Import CSV files
 -- -- ---
 
--- COPY questions FROM '/Users/penpen/Documents/Coding/Data/questions.csv'
---   DELIMITER ','
---   CSV HEADER;
+COPY questions FROM '/Users/penpen/Documents/Coding/Data/questions.csv'
+  DELIMITER ','
+  CSV HEADER;
 
--- COPY answers FROM '/Users/penpen/Documents/Coding/Data/answers.csv'
---   DELIMITER ','
---   CSV HEADER;
+COPY answers FROM '/Users/penpen/Documents/Coding/Data/answers.csv'
+  DELIMITER ','
+  CSV HEADER;
 
--- COPY answer_photos FROM '/Users/penpen/Documents/Coding/Data/answers_photos.csv'
---   DELIMITER ','
---   CSV HEADER;
+COPY answer_photos FROM '/Users/penpen/Documents/Coding/Data/answers_photos.csv'
+  DELIMITER ','
+  CSV HEADER;
