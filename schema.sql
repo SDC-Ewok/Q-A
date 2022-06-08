@@ -61,3 +61,16 @@ CREATE TABLE questions (
 
 ALTER TABLE answers ADD FOREIGN KEY (question_id) REFERENCES questions (question_id);
 ALTER TABLE answer_photos ADD FOREIGN KEY (answer_id) REFERENCES answers (answer_id);
+
+
+COPY questions FROM '/Users/penpen/Documents/Coding/SDC-Q-A/Data/questions.csv'
+  DELIMITER ','
+  CSV HEADER;
+
+COPY answers FROM '/Users/penpen/Documents/Coding/SDC-Q-A/Data/answers.csv'
+  DELIMITER ','
+  CSV HEADER;
+
+COPY answer_photos FROM '/Users/penpen/Documents/Coding/SDC-Q-A/Data/answers_photos.csv'
+  DELIMITER ','
+  CSV HEADER;
