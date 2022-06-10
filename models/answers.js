@@ -3,6 +3,7 @@ let db = require('../db');
 module.exports = {
 
   getA: (params) => {
+
     let query = `SELECT
     answers.answer_id, answers.body, answers.answer_date AS date, answers.answerer_name, answers.helpfulness,
     COALESCE(
@@ -16,7 +17,10 @@ module.exports = {
     WHERE
       answers.question_id = ${params.question_id}
     GROUP BY
-    answers.answer_id;`
+    answers.answer_id
+    LIMIT ${params.count}
+    OFFSET ${params.page * params.count};
+    `
     return db.query(query);
   },
 
