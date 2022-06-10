@@ -51,16 +51,23 @@ module.exports = {
     WHERE questions.product_id = 1
     GROUP BY questions.product_id;`
 
-
     return db.query(query);
   },
   addQ:(params) =>{
 
   },
   markHelpful:(id) => {
-
+    let query = `
+    UPDATE questions
+    SET question_helpfulness = question_helpfulness + 1
+    WHERE question_id = ${id};`
+    return db.query(query);
   },
   report:(id) =>{
-
+    let query = `
+    UPDATE questions
+    SET reported = true
+    WHERE question_id = ${id};`
+    return db.query(query);
   }
 }

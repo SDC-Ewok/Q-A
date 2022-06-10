@@ -17,9 +17,17 @@ module.exports = {
 
   },
   markHelpful:(req,res) => {
-
+    models.questions.markHelpful(req.params.question_id)
+    .then(response => {
+      res.status(201).send(response.command);
+    })
+    .catch(err => res.status(404).send(err))
   },
   report:(req,res) => {
-
+    models.questions.report(req.params.question_id)
+    .then(response => {
+      res.status(201).send(response.command);
+    })
+    .catch(err => res.status(404).send(err))
   }
 }

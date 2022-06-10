@@ -94,3 +94,10 @@ UPDATE questions SET temp_date = to_timestamp(question_date/1000)::TIMESTAMP;
 ALTER TABLE questions ALTER COLUMN question_date TYPE TIMESTAMP WITHOUT TIME ZONE USING temp_date;
 ALTER TABLE questions DROP COLUMN temp_date;
 
+-- ---
+-- Index
+-- ---
+
+CREATE INDEX answer_id ON answer_photos (answer_id);
+CREATE INDEX question_id ON answers(question_id);
+CREATE INDEX product_id ON questions(product_id);

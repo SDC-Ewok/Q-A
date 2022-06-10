@@ -8,7 +8,6 @@ module.exports = {
     let input = {question_id: questionId, page: page, count: count};
     models.answers.getA(input)
     .then(response => {
-      console.log('here',response.rows)
       let result = {...input, results: response.rows};
       res.status(200).send(result);
     })
@@ -18,14 +17,17 @@ module.exports = {
 
   },
   markHelpful:(req,res) => {
-
+    models.answers.markH(req.params.question_id)
+    .then(response => {
+      res.status(201).send(response.command);
+    })
+    .catch(err => res.status(404).send(err))
   },
   report:(req,res) => {
-
-  },
-  test:(req,res) => {
-    models.answers.test(res.body).then(result => {
-      console.log(result.rows,'dpasnda')
-      res.status(200).send(result.rows)})
+    models.answers.report(req.params.question_id)
+    .then(response => {
+      res.status(201).send(response.command);
+    })
+    .catch(err => res.status(404).send(err))
   }
 }

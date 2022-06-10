@@ -29,24 +29,19 @@ module.exports = {
   },
 
   markH:(id) => {
-
+    let query = `
+    UPDATE answers
+    SET helpfulness = helpfulness + 1
+    WHERE answer_id = ${id};`
+    return db.query(query);
   },
 
   report:(id) => {
-
-
-  },
-  test:(amount) => {
-
-    // let text = `select answers.answer_id AS id, answers.body, jsonb_agg(to_jsonb(answer_photos.photo_id)) AS items
-    // FROM answers
-    // WHERE answers.answer_id < 5
-    // GROUP BY
-    // answers.answer_id
-    // ;
-    // `
-    // console.log('here',db.query(text))
-    // return db.query(text);
+    let query = `
+    UPDATE answers
+    SET reported = true
+    WHERE answer_id = ${id};`
+    return db.query(query);
   }
 }
 
