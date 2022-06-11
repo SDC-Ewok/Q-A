@@ -4,6 +4,12 @@ A back end service-oriented api scaled to support more than half a thousand requ
 ## Technologies Used
 [![My Skills](https://skills.thijs.gg/icons?i=nodejs,js,postgres,express&theme=light)](https://skills.thijs.gg)
 
+## Getting Start
+1. Fork and Clone: `git clone https://github.com/SDC-Ewok/SDC-Q-A`
+
+
+
+
 ## API Endpoints
 Method | Endpoint | Description | Parameters
 -------| ---------| ------------| ----------
@@ -15,6 +21,7 @@ PUT | /qa/questions/helpful/:question_id | Mark question as helpful | question_i
 PUT | /qa/questions/report/:question_id | Report question | question_id
 PUT | /qa/answers/helpful/:question_id | Mark answer as helpful | answer_id
 PUT | /qa/answers/report/:question_id | Report answer | answer_id
+
 
 ## Contributor
 ### Jin Peng
