@@ -5,13 +5,18 @@ A back end service-oriented api scaled to support more than half a thousand requ
 [![My Skills](https://skills.thijs.gg/icons?i=nodejs,js,postgres,express&theme=light)](https://skills.thijs.gg)
 
 ## Getting Start
-1. Fork and Clone:
+1. Fork and Clone:</br>
 ```git clone https://github.com/SDC-Ewok/SDC-Q-A```
-2. Install dependencies:
+2. Install dependencies:</br>
 ```npm install```
 3. Configure your database settings in .env
-4. Start the server:
+4. Start the server:</br>
 ```npm start```
+5. run test </br>
+cd into the test folder than run</br>
+```k6 run answers.test.js``` For answers </br>
+```k6 run questions.test.js``` For questions
+
 
 
 
