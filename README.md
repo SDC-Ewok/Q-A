@@ -6,12 +6,12 @@ A back end service-oriented api scaled to support more than half a thousand requ
 
 ## Getting Start
 1. Fork and Clone:
-`git clone https://github.com/SDC-Ewok/SDC-Q-A`
+```git clone https://github.com/SDC-Ewok/SDC-Q-A```
 2. Install dependencies:
-`npm install`
+```npm install```
 3. Configure your database settings in .env
 4. Start the server:
-`npm start`
+```npm start```
 
 
 
