@@ -12,7 +12,7 @@ A back end service-oriented api scaled to support more than half a thousand requ
 3. Configure your database settings in .env
 4. Start the server:</br>
 ```npm start```
-5. run test </br>
+5. Run test </br>
 cd into the test folder than run</br>
 ```k6 run answers.test.js``` For answers </br>
 ```k6 run questions.test.js``` For questions
