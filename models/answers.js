@@ -25,7 +25,25 @@ module.exports = {
   },
 
   addA:(params) => {
-
+    let query = `
+    INSERT INTO
+    answers (question_id, body, answer_date, answerer_name, answerer_email )
+    VALUES
+    (${params.question_id}, '${params.body}', now(), '${params.name}', '${params.email}');`
+    if( params.photos && params.photos.length)  {
+      let promisesArr = [];
+      promisesArr.push(db.query(query));
+      params.photos.map((url,i) => {
+        query = `
+        INSERT INTO
+        answer_photos (answer_id, photo_url)
+        VALUES
+        (lastval(), '${params.photos[i]}');`;
+        promisesArr.push(db.query(query));
+      })
+      return Promise.all(promisesArr)
+    }
+    return db.query(query)
   },
 
   markH:(id) => {

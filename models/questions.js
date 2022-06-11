@@ -54,6 +54,9 @@ module.exports = {
     return db.query(query);
   },
   addQ:(params) =>{
+    let query = `INSERT INTO questions (product_id, question_body, question_date, asker_name, asker_email)
+    VALUES (${params.product_id}, '${params.body}', NOW(), '${params.name}', '${params.email}');`;
+    return db.query(query);
 
   },
   markHelpful:(id) => {

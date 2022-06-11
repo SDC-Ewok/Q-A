@@ -13,20 +13,29 @@ module.exports = {
     })
     .catch(err => res.status(500).send(err))
   },
-  addNew:(req,res) => {
 
+  addNew:(req,res) => {
+    let data = req.body;
+    data.question_id = req.query.question_id;
+    models.answers.addA(data)
+    .then(response => {
+      res.status(205).send('CREATED');
+    })
+    .catch(err => res.status(500).send(err))
   },
+
   markHelpful:(req,res) => {
     models.answers.markH(req.params.question_id)
     .then(response => {
-      res.status(201).send(response.command);
+      res.status(204).send(response.command);
     })
     .catch(err => res.status(404).send(err))
   },
+
   report:(req,res) => {
     models.answers.report(req.params.question_id)
     .then(response => {
-      res.status(201).send(response.command);
+      res.status(204).send(response.command);
     })
     .catch(err => res.status(404).send(err))
   }

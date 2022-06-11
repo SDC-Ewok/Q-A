@@ -98,6 +98,15 @@ ALTER TABLE questions DROP COLUMN temp_date;
 -- Index
 -- ---
 
-CREATE INDEX answer_id ON answer_photos (answer_id);
+CREATE INDEX answer_id ON answer_photos(answer_id);
 CREATE INDEX question_id ON answers(question_id);
 CREATE INDEX product_id ON questions(product_id);
+
+
+-- ---
+-- SET CURRENT INDEX
+-- ---
+
+SELECT SETVAL((SELECT PG_GET_SERIAL_SEQUENCE('"answers"', 'answer_id')), (SELECT (MAX("answer_id") + 1) FROM "answers"), FALSE);
+SELECT SETVAL((SELECT PG_GET_SERIAL_SEQUENCE('"questions"', 'question_id')), (SELECT (MAX("question_id") + 1) FROM "questions"), FALSE);
+SELECT SETVAL((SELECT PG_GET_SERIAL_SEQUENCE('"answer_photos"', 'photo_id')), (SELECT (MAX("photo_id") + 1) FROM "answer_photos"), FALSE);
