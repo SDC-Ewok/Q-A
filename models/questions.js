@@ -39,7 +39,7 @@ module.exports = {
               FROM (
                 SELECT *
                 FROM answers
-                WHERE answers.question_id = question_id
+                WHERE answers.question_id = ${params.product_id}
                 ORDER BY helpfulness
                 LIMIT 2
               ) AS answers
@@ -48,7 +48,7 @@ module.exports = {
       )
     ) AS results
     FROM questions
-    WHERE questions.product_id = 1
+    WHERE questions.product_id = ${params.product_id}
     GROUP BY questions.product_id;`
 
     return db.query(query);
@@ -56,6 +56,7 @@ module.exports = {
   addQ:(params) =>{
     let query = `INSERT INTO questions (product_id, question_body, question_date, asker_name, asker_email)
     VALUES (${params.product_id}, '${params.body}', NOW(), '${params.name}', '${params.email}');`;
+
     return db.query(query);
 
   },
