@@ -16,6 +16,8 @@ PUT | /qa/questions/report/:question_id | Report question | question_id
 PUT | /qa/answers/helpful/:question_id | Mark answer as helpful | answer_id
 PUT | /qa/answers/report/:question_id | Report answer | answer_id
 
+## Contributor
+### Jin Peng
 <div id="badges">
 <a href="https://www.linkedin.com/in/jinpeng307/">
 <img src="https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white&style=for-the-badge" alt="LinkedIn Badge">
