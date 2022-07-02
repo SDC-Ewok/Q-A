@@ -34,14 +34,20 @@ PUT | /qa/answers/helpful/:question_id | Mark answer as helpful | answer_id
 PUT | /qa/answers/report/:question_id | Report answer | answer_id
 
 ### List Questions
+
 GET /qa/questions
+
 > Retrieves a list of questions for a particular product. This list does not include any reported questions.
+
 Parameters
+
 Parameter | Type | Description
 -|-|-
 product_id|integer|Specifies the product for which to retrieve questions.
 count|integer|Specifies how many results per page to return. Default 5.
+
 Response
+
 **Status: 200 OK**
 ```
 {
@@ -77,19 +83,29 @@ Response
     ]
 }
 ```
+
 ---
+
 ### Answers List
+
 GET /qa/questions/:question_id/answers
+
 > Returns answers for a given question. This list _does not_ include any reported answers.
+
 Parameters
+
 Parameter | Type | Description
 -|-|-
 question_id|integer|Required ID of the question for wich answers are needed
+
 Query Parameters
+
 Parameter | Type | Description
 -|-|-
 count|integer|Specifies how many results per page to return. Default 5.
+
 Response
+
 **Status: 200 OK**
 ```
 {
