@@ -142,17 +142,24 @@ Response
 ```
 ---
 ### Add a Question
+
 POST /qa/questions
+
 > Adds a question for the given product
+
 Body Parameters
+
 Parameter | Type | Description
 -|-|-
 body|text|Text of question being asked
 name|text|Username for question asker
 email|text|Email address for question asker
 product_id|integer|Required ID of the Product for which the question is posted
+
 Response
+
 **Status: 201 CREATED**
+
 ---
 ### Add an Answer
 POST /qa/questions
